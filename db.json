@@ -1,0 +1,172 @@
+{
+  "personas": [
+    {
+      "id": "1",
+      "nombre": "Juan Pérez",
+      "edad": "25",
+      "habilidades": [
+        "JavaScript",
+        "Angular",
+        "Node.js"
+      ]
+    },
+    {
+      "id": "2",
+      "nombre": "María García",
+      "edad": "30",
+      "habilidades": [
+        "HTML",
+        "CSS",
+        "React"
+      ]
+    },
+    {
+      "id": "3",
+      "nombre": "Carlos López",
+      "edad": "28",
+      "habilidades": [
+        "Python",
+        "Django",
+        "Flask"
+      ]
+    }
+  ],
+  "tareas": [
+    {
+      "id": "1",
+      "nombre": "Desarrollar aplicación web",
+      "fecha": "2024-10-02",
+      "personas": [
+        {
+          "id": 1,
+          "nombre": "Juan Pérez",
+          "edad": "25",
+          "habilidades": [
+            "JavaScript",
+            "Angular",
+            "Node.js"
+          ]
+        },
+        {
+          "id": 2,
+          "nombre": "María García",
+          "edad": "30",
+          "habilidades": [
+            "HTML",
+            "CSS",
+            "React"
+          ]
+        }
+      ],
+      "estado": true
+    },
+    {
+      "id": "2",
+      "nombre": "Crear API REST",
+      "fecha": "2024-10-05",
+      "personas": [
+        {
+          "id": 3,
+          "nombre": "Carlos López",
+          "edad": "28",
+          "habilidades": [
+            "Python",
+            "Django",
+            "Flask"
+          ]
+        }
+      ],
+      "estado": true
+    },
+    {
+      "id": "3",
+      "nombre": "Realizar Despliegue",
+      "fecha": "2024-10-04T05:00:00.000Z",
+      "personas": [
+        {
+          "id": 4,
+          "nombre": "Daniela Alarcón",
+          "edad": 24,
+          "habilidades": [
+            "Desarrolladora"
+          ]
+        }
+      ],
+      "estado": true
+    },
+    {
+      "id": "4",
+      "nombre": "Diseñar UI/UX",
+      "fecha": "2024-10-07T05:00:00.000Z",
+      "personas": [
+        {
+          "id": 5,
+          "nombre": "Pedro Manuel",
+          "edad": 25,
+          "habilidades": [
+            "Diseño",
+            "Gráfico"
+          ]
+        }
+      ],
+      "estado": true
+    },
+    {
+      "id": "5",
+      "nombre": "Estructura de base de datos",
+      "fecha": "2024-10-14T05:00:00.000Z",
+      "personas": [
+        {
+          "id": 6,
+          "nombre": "María José",
+          "edad": 21,
+          "habilidades": [
+            "SQL"
+          ]
+        }
+      ],
+      "estado": false
+    },
+    {
+      "id": "6",
+      "nombre": "Implementar botón",
+      "fecha": "2024-10-14T05:00:00.000Z",
+      "personas": [
+        {
+          "id": 34,
+          "nombre": "Victor Manuel",
+          "edad": 26,
+          "habilidades": [
+            "Diseñador"
+          ]
+        }
+      ],
+      "estado": true
+    },
+    {
+      "id": "7",
+      "nombre": "Pruebas unitarias",
+      "fecha": "2024-10-03T05:00:00.000Z",
+      "estado": false,
+      "personas": [
+        {
+          "id": "369",
+          "nombre": "Juan David Torres",
+          "edad": 35,
+          "habilidades": [
+            "Tester",
+            "Desarrollador"
+          ]
+        },
+        {
+          "id": "293",
+          "nombre": "Daniela Milena",
+          "edad": 30,
+          "habilidades": [
+            "Programadora"
+          ]
+        }
+      ]
+    }
+  ]
+}

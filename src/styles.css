@@ -1,4 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+  background-color: #fafafa;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+fieldset.scheduler-border {
+  border: 1px groove #ddd !important;
+  background-color: #ffffff;
+  padding: 0 1.4em 1.4em 1.4em !important;
+  margin: 0 0 1.5em 0 !important;
+  -webkit-box-shadow: 0px 0px 0px 0px #000;
+  box-shadow: 0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+  font-size: 1.2em !important;
+  font-weight: bold !important;
+  text-align: left !important;
+  width: auto;
+  padding: 0 10px;
+  border-bottom: none;
+}
+
+/* ----- AJUSTE DISEÑO TABLA MATERIAL */
+.mat-mdc-table .mat-mdc-header-cell {
+  background: #1e262b !important;
+  color: #ffffff !important;
+  font-weight: bold !important;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+.mat-mdc-table .mdc-data-table__row {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+.mat-mdc-table .mdc-data-table__row:nth-child(even) {
+  background-color: #f4f4f4cc;
+}
+
+.mat-mdc-table .mdc-data-table__row:hover {
+  background-color: rgb(236, 236, 236) !important;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0;
+}

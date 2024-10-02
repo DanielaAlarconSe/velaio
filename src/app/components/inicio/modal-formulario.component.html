@@ -1,0 +1,151 @@
+<h2 mat-dialog-title class="text-white bg-dark">
+  <i class="fa-solid fa-circle-info"></i> Formulario
+</h2>
+<mat-dialog-content>
+  <div class="row mt-3">
+    <div class="col">
+      <fieldset class="scheduler-border shadow-sm">
+        <legend class="scheduler-border">Crear nueva tarea</legend>
+        <form [formGroup]="tareaForm">
+          <div class="row mt-2">
+            <div class="col">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Nombre de la tarea</mat-label>
+                <input
+                  #input1
+                  maxlength="255"
+                  type="text"
+                  matInput
+                  formControlName="nombre"
+                />
+                <mat-hint align="end">{{ input1.value.length }}/255</mat-hint>
+                <mat-error *ngIf="tareaForm.get('nombre')?.invalid">
+                  El nombre es requerido y debe tener al menos 5 caracteres.
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Fecha límite</mat-label>
+                <input
+                  matInput
+                  [matDatepicker]="picker1"
+                  formControlName="fecha"
+                />
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="picker1"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+          <div formArrayName="personas">
+            <div
+              *ngFor="let persona of personas.controls; let i = index"
+              [formGroupName]="i"
+            >
+              <fieldset class="scheduler-border shadow-sm">
+                <legend class="scheduler-border">Persona {{ i + 1 }}</legend>
+
+                <div class="row mt-2 mb-3">
+                  <div class="col">
+                    <mat-form-field
+                      class="example-full-width"
+                      appearance="outline"
+                    >
+                      <mat-label>Nombre completo</mat-label>
+                      <input matInput formControlName="nombre" />
+                      <mat-error *ngIf="personas.at(i).get('nombre')?.invalid">
+                        Nombre requerido y debe tener al menos 5 caracteres.
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field
+                      class="example-full-width"
+                      appearance="outline"
+                    >
+                      <mat-label>Edad</mat-label>
+                      <input matInput type="number" formControlName="edad" />
+                      <mat-error *ngIf="personas.at(i).get('edad')?.invalid">
+                        Edad debe ser mayor a 18 años.
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div formArrayName="habilidades">
+                  <div
+                    *ngFor="
+                      let habilidad of getHabilidades(i).controls;
+                      let j = index
+                    "
+                    [formGroupName]="j"
+                  >
+                    <div class="row">
+                      <div class="col">
+                        <mat-form-field
+                          class="example-full-width"
+                          appearance="outline"
+                        >
+                          <mat-label>Habilidad</mat-label>
+                          <input matInput formControlName="nombre" />
+                          <mat-error *ngIf="habilidad.get('nombre')?.invalid">
+                            Habilidad requerida.
+                          </mat-error>
+                        </mat-form-field>
+                      </div>
+                      <div class="col-sm-2">
+                        <button
+                          class="btn btn-danger btn-lg mt-1"
+                          #tooltip="matTooltip"
+                          matTooltip="Eliminar habilidad"
+                          matTooltipPosition="above"
+                          (click)="eliminarHabilidad(i, j)"
+                        >
+                          <i class="fa-solid fa-trash"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <button
+                        class="btn btn-success mt-1"
+                        #tooltip="matTooltip"
+                        matTooltip="Añadir habilidad"
+                        matTooltipPosition="above"
+                        (click)="agregarHabilidad(i)"
+                      >
+                        <i class="fa-solid fa-plus"></i> Agregar Habilidad
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col text-right">
+                    <button class="btn btn-danger" (click)="eliminarPersona(i)">
+                      Eliminar Persona
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <button class="btn btn-success" (click)="agregarPersona()">
+              Agregar Persona
+            </button>
+          </div>
+        </form>
+      </fieldset>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button class="btn btn-warning mr-2" mat-dialog-close>
+    <i class="fa-solid fa-xmark"></i> Cancelar
+  </button>
+  <button class="btn btn-success" (click)="registrarTarea()">
+    <i class="fa-solid fa-floppy-disk"></i> Guardar
+  </button>
+</mat-dialog-actions>

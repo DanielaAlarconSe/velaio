@@ -80,3 +80,11 @@ Se requiere implementar una aplicación que permita:
 - [NgRx](https://ngrx.io/)
 - [jsonplaceholder API](https://jsonplaceholder.typicode.com/)
 
+## Instalar JSON Server
+
+Para instalar **JSON Server** globalmente en tu máquina, ejecuta el siguiente comando:
+
+```bash
+npm install -g json-server
+
+npm install json-server --save-dev
