@@ -102,6 +102,11 @@
                           matTooltip="Eliminar habilidad"
                           matTooltipPosition="above"
                           (click)="eliminarHabilidad(i, j)"
+                          [disabled]="
+                          !getHabilidades(i).controls[
+                            getHabilidades(i).controls.length - 1
+                          ].get('nombre')?.valid
+                        "
                         >
                           <i class="fa-solid fa-trash"></i>
                         </button>
@@ -116,6 +121,11 @@
                         matTooltip="Añadir habilidad"
                         matTooltipPosition="above"
                         (click)="agregarHabilidad(i)"
+                        [disabled]="
+                          !getHabilidades(i).controls[
+                            getHabilidades(i).controls.length - 1
+                          ].get('nombre')?.valid
+                        "
                       >
                         <i class="fa-solid fa-plus"></i> Agregar Habilidad
                       </button>
@@ -125,14 +135,24 @@
                 <hr />
                 <div class="row">
                   <div class="col text-right">
-                    <button class="btn btn-danger" (click)="eliminarPersona(i)">
+                    <button
+                      class="btn btn-danger"
+                      (click)="eliminarPersona(i)"
+                      [disabled]="!personas.at(personas.length - 1).valid"
+                    >
+                      <i class="fa-solid fa-user-minus"></i>
                       Eliminar Persona
                     </button>
                   </div>
                 </div>
               </fieldset>
             </div>
-            <button class="btn btn-success" (click)="agregarPersona()">
+            <button
+              class="btn btn-success"
+              (click)="agregarPersona()"
+              [disabled]="!personas.at(personas.length - 1).valid"
+            >
+              <i class="fa-solid fa-user-plus"></i>
               Agregar Persona
             </button>
           </div>

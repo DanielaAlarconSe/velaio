@@ -30,6 +30,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { FiltroEstadoPipe } from 'src/app/pipes/filtro-estado.pipe';
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
+import { FooterComponent } from '../shared/footer/footer.component';
 
 @Component({
   selector: 'app-inicio',
@@ -37,6 +39,8 @@ import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
   styleUrls: ['./inicio.component.css'],
   standalone: true,
   imports: [
+    NavbarComponent,
+    FooterComponent,
     MatTableModule,
     MatPaginatorModule,
     MatFormFieldModule,
